@@ -11,8 +11,12 @@
     padding: 15px;
   }
 
-  #emotion {
+  #ball {
     font-size: 40px;
+    color: red;
+    position: absolute;
+    top: 300px;
+    left: 300px;
   }
 
 </style>
@@ -27,12 +31,19 @@
     <script src="jqueryMobile10a1min.js"></script>
         <script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
 
-<div id="accelerometer">Waiting for accelerometer...</div><div id="hello" onclick='showSmiley()' >Hello Lisa!<span id='emotion'>x</span></div><script type="text/javascript" src="http://debug.phonegap.com/target/target-script-min.js#63dffb18-8ca8-11e0-9135-4040eebe8fea"></script>
+<div id="accelerometer">Waiting for accelerometer...</div><div id="hello" onclick='showSmiley()' >Hello Lisa!</div>
+
+<div id='ball'>x</span>
+
+<script type="text/javascript" src="http://debug.phonegap.com/target/target-script-min.js#63dffb18-8ca8-11e0-9135-4040eebe8fea"></script>
 
         <script type="text/javascript">
 
     // The watch id references the current `watchAcceleration`
     var watchID = null;
+
+    var ballTop = 400;
+    var ballLeft = 400;
 
     // Wait for Cordova to load
     //
@@ -72,6 +83,11 @@
                             'Acceleration Y: ' + acceleration.y + '<br />' +
                             'Acceleration Z: ' + acceleration.z + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
+        ballLeft += acceleration.x;
+        ballTop += acceleration.y;
+        var ball = document.getElementById('ball');
+        ball.style.top = ballTop + 'px';
+        ball.style.left = ballLeft + 'px';
     }
 
     // onError: Failed to get the acceleration
@@ -81,7 +97,8 @@
     }
 
     function showSmiley() {
-      document.getElementById('emotion').innerHTML = '☺';
+      var ball = document.getElementById('ball');
+      // document.getElementById('ball').innerHTML = '☺';
     }
 
     </script>
