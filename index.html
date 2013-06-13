@@ -12,11 +12,10 @@
   }
 
   #ball {
-    font-size: 40px;
     color: red;
-    position: absolute;
-    top: 200px;
-    left: 200px;
+    position: relative;
+    top: 0px;
+    left: 0px;
   }
 
 </style>
@@ -33,7 +32,9 @@
 
 <div id="accelerometer">Waiting for accelerometer...</div><div id="hello" onclick='showSmiley()' >Hello Lisa!</div>
 
-<div id='ball'>x</div>
+<p id="text">
+Harry Potter is a series of seven fantasy novels written by the British author J. K. Rowling. The books chronicle the adventures of a wizard, Harry Potter, and his friends Ronald Weasley and Hermione Granger, all of whom are students at Hogwarts School of Witchcraft and <span id='ball'>Wizardry</span>. The main story arc concerns Harry's quest to overcome the Dark wizard Lord Voldemort, whose aims are to become immortal, conquer the wizarding world, subjugate non-magical people, and destroy all those who stand in his way, especially Harry Potter.
+</p>
 
 <script type="text/javascript" src="http://debug.phonegap.com/target/target-script-min.js#63dffb18-8ca8-11e0-9135-4040eebe8fea"></script>
 
@@ -42,8 +43,8 @@
     // The watch id references the current `watchAcceleration`
     var watchID = null;
 
-    var ballTop = 200;
-    var ballLeft = 200;
+    var ballTop = 0;
+    var ballLeft = 0;
 
     // Wait for Cordova to load
     //
