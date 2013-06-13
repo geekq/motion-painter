@@ -13,6 +13,7 @@
 
   #ball {
     color: red;
+    font-weight: bold;
     position: relative;
     top: 0px;
     left: 0px;
@@ -53,8 +54,7 @@ Harry Potter is a series of seven fantasy novels written by the British author J
     // Cordova is ready
     //
     function onDeviceReady() {
-        alert('onDeviceReady is ready');
-        startWatch();
+        setTimeout(startWatch, 10000);
     }
 
     // Start watching the acceleration
