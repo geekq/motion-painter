@@ -3,7 +3,7 @@
   <head>
     <title>Acceleration Example</title>
 
-    <!-- script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script -->
+    <script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // The watch id references the current `watchAcceleration`
@@ -24,8 +24,8 @@
     //
     function startWatch() {
 
-        // Update acceleration every 3 seconds
-        var options = { frequency: 3000 };
+        // Update acceleration every 1 second
+        var options = { frequency: 1000 };
 
         watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
     }
@@ -77,7 +77,7 @@
   </head>
   <body>
     <div id="accelerometer">Waiting for accelerometer...</div>
-    <div id="hello" onclick='showSmiley()'>Hello Lisa!
+    <div id="hello" onclick='showSmiley()' ontouch='showSmiley()' >Hello Lisa!
       <span id='emotion'>x</span>
     </div>
   </body>
