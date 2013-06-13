@@ -3,7 +3,7 @@
   <head>
     <title>Acceleration Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
+    <!-- script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script -->
     <script type="text/javascript" charset="utf-8">
 
     // The watch id references the current `watchAcceleration`
@@ -55,9 +55,30 @@
         alert('onError!');
     }
 
+    function showSmiley() {
+      document.getElementById('emotion').innerHTML = '☺';
+    }
+
     </script>
+
+<style>
+  #hello {
+    background-color: lightgreen;
+    color: white;
+    padding: 15px;
+  }
+
+  #emotion {
+    font-size: 40px;
+  }
+
+</style>
+
   </head>
   <body>
     <div id="accelerometer">Waiting for accelerometer...</div>
+    <div id="hello" onclick='showSmiley()'>Hello Lisa!
+      <span id='emotion'>x</span>
+    </div>
   </body>
 </html>
