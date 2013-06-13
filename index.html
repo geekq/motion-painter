@@ -83,8 +83,8 @@
                             'Acceleration Y: ' + acceleration.y + '<br />' +
                             'Acceleration Z: ' + acceleration.z + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
-        ballLeft += 1; //acceleration.x;
-        ballTop +=1; // acceleration.y;
+        ballLeft += acceleration.x;
+        ballTop += parseFloat(acceleration.y);
         var ball = document.getElementById('ball');
         ball.style.top = ballTop + 'px';
         ball.style.left = ballLeft + 'px';
@@ -99,8 +99,8 @@
     function showSmiley() {
       var ball = document.getElementById('ball');
       // document.getElementById('ball').innerHTML = '☺';
-        ballLeft += acceleration.x;
-        ballTop += parseFloat(acceleration.y);
+        ballLeft += 1; //acceleration.x;
+        ballTop +=1; // acceleration.y;
         ball.style.top = ballTop + 'px';
         ball.style.left = ballLeft + 'px';
     }
