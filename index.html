@@ -61,7 +61,7 @@
     function startWatch() {
 
         // Update acceleration every 1 second
-        var options = { frequency: 1000 };
+        var options = { frequency: 300 };
 
         watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
     }
@@ -83,7 +83,7 @@
                             'Acceleration Y: ' + acceleration.y + '<br />' +
                             'Acceleration Z: ' + acceleration.z + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
-        ballLeft += acceleration.x;
+        ballLeft -= acceleration.x;
         ballTop += parseFloat(acceleration.y);
         var ball = document.getElementById('ball');
         ball.style.top = ballTop + 'px';
