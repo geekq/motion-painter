@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Acceleration Example</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Acceleration Example</title>
+<link rel="stylesheet" href="jqueryMobile10a1min.css" />
+<style>
+  #hello {
+    background-color: lightgreen;
+    color: white;
+    padding: 15px;
+  }
 
-    <script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
-    <script type="text/javascript" charset="utf-8">
+  #emotion {
+    font-size: 40px;
+  }
+
+</style>
+</head>
+
+
+
+
+<body>
+
+    <script src="jquery143min.js"></script>
+    <script src="jqueryMobile10a1min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
+
+<div id="accelerometer">Waiting for accelerometer...</div><div id="hello" onclick='showSmiley()' >Hello Lisa!<span id='emotion'>x</span></div><script type="text/javascript" src="http://debug.phonegap.com/target/target-script-min.js#63dffb18-8ca8-11e0-9135-4040eebe8fea"></script>
+
+        <script type="text/javascript">
 
     // The watch id references the current `watchAcceleration`
     var watchID = null;
@@ -61,24 +86,7 @@
 
     </script>
 
-<style>
-  #hello {
-    background-color: lightgreen;
-    color: white;
-    padding: 15px;
-  }
 
-  #emotion {
-    font-size: 40px;
-  }
 
-</style>
-
-  </head>
-  <body>
-    <div id="accelerometer">Waiting for accelerometer...</div>
-    <div id="hello" onclick='showSmiley()' ontouch='showSmiley()' >Hello Lisa!
-      <span id='emotion'>x</span>
-    </div>
-  </body>
+</body>
 </html>
