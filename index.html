@@ -33,7 +33,7 @@
 
 <div id="accelerometer">Waiting for accelerometer...</div><div id="hello" onclick='showSmiley()' >Hello Lisa!</div>
 
-<div id='ball'>x</span>
+<div id='ball'>x</div>
 
 <script type="text/javascript" src="http://debug.phonegap.com/target/target-script-min.js#63dffb18-8ca8-11e0-9135-4040eebe8fea"></script>
 
@@ -42,8 +42,8 @@
     // The watch id references the current `watchAcceleration`
     var watchID = null;
 
-    var ballTop = 400;
-    var ballLeft = 400;
+    var ballTop = 300;
+    var ballLeft = 300;
 
     // Wait for Cordova to load
     //
@@ -83,8 +83,8 @@
                             'Acceleration Y: ' + acceleration.y + '<br />' +
                             'Acceleration Z: ' + acceleration.z + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
-        ballLeft += acceleration.x;
-        ballTop += acceleration.y;
+        ballLeft += 1; //acceleration.x;
+        ballTop +=1; // acceleration.y;
         var ball = document.getElementById('ball');
         ball.style.top = ballTop + 'px';
         ball.style.left = ballLeft + 'px';
@@ -99,6 +99,10 @@
     function showSmiley() {
       var ball = document.getElementById('ball');
       // document.getElementById('ball').innerHTML = '☺';
+        ballLeft += 1; //acceleration.x;
+        ballTop +=1; // acceleration.y;
+        ball.style.top = ballTop + 'px';
+        ball.style.left = ballLeft + 'px';
     }
 
     </script>
